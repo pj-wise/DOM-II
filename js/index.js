@@ -13,7 +13,7 @@ busImg.addEventListener('mouseover', function (event) {
  });
 
  window.addEventListener('scroll', function(event) {
-     navBar.style.opacity = "0.7";
+     navBar.style.opacity = "0.8";
      navBar.style.backgroundColor = "#fff3a8";
  }); 
 
@@ -54,6 +54,14 @@ window.addEventListener('keydown', function(event) {
     type.style.display = "block";
     type.style.marginTop = "20px";
 });
+
+const btn = document.querySelectorAll('.btn');
+console.log(btn);
+for(let i = 0; i < btn.length; i++){
+    btn[i].addEventListener('click', function() {
+        alert('YOU PRESSED THE BUTTON');
+    });
+}
 
 //prevent links from reload
 const navLinks = document.querySelectorAll('.nav-link');
