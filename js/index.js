@@ -39,11 +39,11 @@ mapImg.addEventListener('mouseup', function(event) {
 const canalImg = document.querySelector('.inverse-content img');
 
 canalImg.addEventListener('mousedown', function(event) {
-    canalImg.style.filter = "blur(3px)";
+    canalImg.style.filter = "sepia(100%)";
 });
 
 canalImg.addEventListener('mouseup', function(event) {
-    canalImg.style.filter = "blur(0px)";
+    canalImg.style.filter = "sepia(0%)";
 });
 
 const type = document.querySelector('.typewriter');
@@ -55,9 +55,10 @@ window.addEventListener('keydown', function(event) {
     type.style.marginTop = "20px";
 });
 
-
-
-
-
-  
-
+//prevent links from reload
+const navLinks = document.querySelectorAll('.nav-link');
+for(let i = 0; i < navLinks.length; i++){
+navLinks[i].addEventListener('click', function (event){
+    event.preventDefault();
+});
+};
