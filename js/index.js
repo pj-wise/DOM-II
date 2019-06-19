@@ -12,10 +12,19 @@ busImg.addEventListener('mouseover', function (event) {
     busImg.style.filter = "grayscale(0%)";
  });
 
- window.addEventListener('scroll', function(event) {
+
+
+ window.addEventListener('scroll', function(event) { 
+    let offY = window.pageYOffset;
+     if (offY > 91){
      navBar.style.opacity = "0.8";
      navBar.style.backgroundColor = "#fff3a8";
- }); 
+ }else {
+    navBar.style.opacity = "1";
+    navBar.style.backgroundColor = "#ffffff";
+    console.log(window.pageYOffset);
+ }
+});
 
 
 
@@ -55,11 +64,16 @@ window.addEventListener('keydown', function(event) {
     type.style.marginTop = "20px";
 });
 
+window.addEventListener('keyup', function(event) {
+    beforeType.style.display = "block";
+    type.style.display = "none";
+    type.style.marginTop = "20px";
+});
+
 const btn = document.querySelectorAll('.btn');
-console.log(btn);
 for(let i = 0; i < btn.length; i++){
     btn[i].addEventListener('click', function() {
-        alert('YOU PRESSED THE BUTTON');
+        alert('YOU PRESSED THE BUTTON!');
     });
 }
 
